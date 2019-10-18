@@ -1,0 +1,2 @@
+npm install
+electron-packager . Spendee --out=/Applications/ --icon=Spendee.icns --overwrite

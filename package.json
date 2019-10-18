@@ -1,0 +1,21 @@
+{
+  "name": "spendee-electron",
+  "productName": "Spendee",
+  "version": "0.9.0",
+  "description": "Simple Electron wrapper for Spendee web app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/ondrejfuhrer/spendee-electron",
+  "keywords": [
+    "Electron",
+    "Spendee",
+    "App"
+  ],
+  "author": "Ondrej Führer",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^6.0.12"
+  }
+}
