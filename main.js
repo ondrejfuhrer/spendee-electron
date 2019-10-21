@@ -1,20 +1,27 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const windowStateKeeper = require('electron-window-state');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
+  let mainWindowState = windowStateKeeper({
+    defaultWidth: 800,
+    defaultHeight: 600,
+  });
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: mainWindowState.width,
+    height: mainWindowState.height,
+    x: mainWindowState.x,
+    y: mainWindowState.y,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
-  })
+    },
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL('https://app.spendee.com')
@@ -29,6 +36,9 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  // Register window size / position listeners in order to preserve state
+  mainWindowState.manage(mainWindow);
 }
 
 // This method will be called when Electron has finished

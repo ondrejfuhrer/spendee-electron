@@ -17,5 +17,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^6.0.12"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
   }
 }
