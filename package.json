@@ -16,7 +16,7 @@
   "author": "Ondrej Führer",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^6.0.12"
+    "electron": "^7.0.0"
   },
   "dependencies": {
     "electron-window-state": "^5.0.3"
