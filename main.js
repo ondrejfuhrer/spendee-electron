@@ -1,11 +1,62 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Menu, MenuItem} = require('electron');
 const path = require('path');
 const windowStateKeeper = require('electron-window-state');
+const Store = require('electron-store');
+
+const store = new Store();
+const APP_URL = 'https://app.spendee.com/';
+const APP_URL_BETA = 'https://web-beta.spendee.com/';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+
+function buildMenu () {
+  let isBetaActive = store.get('beta.enabled');
+  let currentMenu = Menu.getApplicationMenu();
+  let betaVersionMenuItem = new MenuItem({
+    type: 'checkbox',
+    label: 'Enable beta version',
+    enabled: true,
+    visible: true,
+    checked: isBetaActive,
+    click: (menuItem, browserWindow, event) => {
+      let enabled = store.get('beta.enabled');
+      store.set('beta.enabled', !enabled);
+      this.checked = !enabled;
+      loadWindow(browserWindow);
+    },
+  });
+  let submenuItems = currentMenu.items[0].submenu.items;
+  // if our second item is the separator, we insert our menu item
+  let shouldBeInserted = submenuItems[1].type === 'separator';
+  if (shouldBeInserted) {
+    currentMenu.items[0].submenu.insert(1, betaVersionMenuItem);
+  }
+
+  Menu.setApplicationMenu(currentMenu);
+}
+
+function loadWindow(window) {
+  if (store.get('beta.enabled')) {
+    window.loadURL(APP_URL_BETA);
+  } else {
+    window.loadURL(APP_URL);
+  }
+}
+
+function buildWindow(windowState) {
+  return new BrowserWindow({
+    width: windowState.width,
+    height: windowState.height,
+    x: windowState.x,
+    y: windowState.y,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    },
+  });
+}
 
 function createWindow () {
   let mainWindowState = windowStateKeeper({
@@ -13,19 +64,12 @@ function createWindow () {
     defaultHeight: 600,
   });
 
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: mainWindowState.width,
-    height: mainWindowState.height,
-    x: mainWindowState.x,
-    y: mainWindowState.y,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    },
-  });
+  buildMenu();
 
-  // and load the index.html of the app.
-  mainWindow.loadURL('https://app.spendee.com/');
+  // Create the browser window.
+  mainWindow = buildWindow(mainWindowState);
+
+  loadWindow(mainWindow);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
