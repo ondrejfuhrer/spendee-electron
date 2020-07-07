@@ -1,2 +1,0 @@
-npm install
-electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=release-builds
