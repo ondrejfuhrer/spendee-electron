@@ -1,7 +1,7 @@
 {
   "name": "spendee-electron",
   "productName": "Spendee",
-  "version": "0.9.4",
+  "version": "0.9.5-dev",
   "description": "Simple Electron wrapper for Spendee web app",
   "main": "app/main.js",
   "scripts": {
@@ -22,32 +22,32 @@
   "author": "Ondrej Führer",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.2.1"
+    "@electron-forge/cli": "^6.0.0-beta.52",
+    "@electron-forge/maker-deb": "^6.0.0-beta.52",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.52",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.52",
+    "@electron-forge/maker-zip": "^6.0.0-beta.52",
+    "electron": "^9.2.1",
+    "mocha": "^8.1.1"
   },
   "dependencies": {
     "electron-store": "^5.2.0",
-    "electron-window-state": "^5.0.3",
-    "mocha": "^8.1.1"
+    "electron-window-state": "^5.0.3"
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "assets/icons/macos/Spendee.icns"
+      },
       "makers": [
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "linux"
-          ]
-        },
         {
           "name": "@electron-forge/maker-dmg",
           "platforms": [
             "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
+          ],
+          "config": {
+            "icon": "assets/icons/macos/Spendee.icns"
+          }
         }
       ]
     }
