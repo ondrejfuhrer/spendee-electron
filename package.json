@@ -9,7 +9,7 @@
     "package-mac": "electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=out",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make",
+    "make": "electron-forge make --platform=darwin",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
@@ -44,7 +44,7 @@
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "linux"
+            "darwin"
           ]
         },
         {
