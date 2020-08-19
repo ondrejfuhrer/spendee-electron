@@ -6,10 +6,10 @@
   "main": "app/main.js",
   "scripts": {
     "test": "mocha",
-    "package-mac": "electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=release-builds",
+    "package-mac": "electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=out",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make",
+    "make": "electron-forge make --platform=darwin",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
@@ -23,11 +23,10 @@
   "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.52",
-    "@electron-forge/maker-deb": "^6.0.0-beta.52",
     "@electron-forge/maker-dmg": "^6.0.0-beta.52",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.52",
     "@electron-forge/maker-zip": "^6.0.0-beta.52",
     "electron": "^9.2.1",
+    "electron-packager": "^15.0.0",
     "mocha": "^8.1.1"
   },
   "dependencies": {
@@ -42,12 +41,6 @@
       "makers": [
         {
           "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "linux"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
           "platforms": [
             "darwin"
           ]
