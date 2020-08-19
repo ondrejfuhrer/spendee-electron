@@ -5,9 +5,13 @@
   "description": "Simple Electron wrapper for Spendee web app",
   "main": "app/main.js",
   "scripts": {
-    "start": "electron .",
     "test": "mocha",
-    "package-mac": "electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=release-builds"
+    "package-mac": "electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=release-builds",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "repository": "https://github.com/ondrejfuhrer/spendee-electron",
   "keywords": [
