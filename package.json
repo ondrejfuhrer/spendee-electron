@@ -18,11 +18,34 @@
   "author": "Ondrej Führer",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.1.0"
+    "electron": "^9.2.1"
   },
   "dependencies": {
     "electron-store": "^5.2.0",
     "electron-window-state": "^5.0.3",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "linux"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        }
+      ]
+    }
   }
 }
