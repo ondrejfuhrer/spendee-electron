@@ -5,13 +5,14 @@
   "description": "Simple Electron wrapper for Spendee web app",
   "main": "app/main.js",
   "scripts": {
-    "test": "mocha",
-    "package-mac": "electron-packager . Spendee --overwrite --platform=darwin --arch=x64 --icon=assets/icons/macos/Spendee.icns --prune=true --out=out",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make --platform=darwin",
+    "make-zip": "electron-forge make --platform=darwin --targets @electron-forge/maker-zip",
+    "make-dmg": "electron-forge make --platform=darwin --targets @electron-forge/maker-dmg",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "test": "mocha"
   },
   "repository": "https://github.com/ondrejfuhrer/spendee-electron",
   "keywords": [
@@ -25,6 +26,7 @@
     "@electron-forge/cli": "^6.0.0-beta.52",
     "@electron-forge/maker-dmg": "^6.0.0-beta.52",
     "@electron-forge/maker-zip": "^6.0.0-beta.52",
+    "@electron-forge/publisher-github": "^6.0.0-beta.52",
     "electron": "^9.2.1",
     "electron-packager": "^15.0.0",
     "mocha": "^8.1.1"
@@ -44,6 +46,24 @@
           "platforms": [
             "darwin"
           ]
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "platforms": [
+            "darwin"
+          ]
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "ondrejfuhrer",
+              "name": "spendee-electron"
+            },
+            "prerelease": true
+          }
         }
       ]
     }
