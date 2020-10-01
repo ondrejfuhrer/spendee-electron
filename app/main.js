@@ -12,6 +12,10 @@ const APP_URL_BETA = "https://web-beta.spendee.com/";
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+function loadWindow(window) {
+    window.loadURL(store.get("beta.enabled") ? APP_URL_BETA : APP_URL);
+}
+
 function buildMenu() {
     let isBetaActive = store.get("beta.enabled");
     let currentMenu = Menu.getApplicationMenu();
@@ -36,10 +40,6 @@ function buildMenu() {
     }
 
     Menu.setApplicationMenu(currentMenu);
-}
-
-function loadWindow(window) {
-    window.loadURL(store.get("beta.enabled") ? APP_URL_BETA : APP_URL);
 }
 
 function buildWindow(windowState) {
