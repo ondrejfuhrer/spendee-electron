@@ -1,7 +1,7 @@
 {
   "name": "spendee-electron",
   "productName": "Spendee",
-  "version": "0.9.5-dev",
+  "version": "0.9.5",
   "description": "Simple Electron wrapper for Spendee web app",
   "main": "app/main.js",
   "scripts": {
