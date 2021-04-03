@@ -12,7 +12,9 @@
     "make-dmg": "electron-forge make --platform=darwin --targets @electron-forge/maker-dmg",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "test": "mocha"
+    "test": "mocha",
+    "release-notes": "gren release --data-source=commits",
+    "changelog": "gren changelog --data-source=commits --override"
   },
   "repository": "https://github.com/ondrejfuhrer/spendee-electron",
   "keywords": [
@@ -29,6 +31,7 @@
     "@electron-forge/publisher-github": "^6.0.0-beta.53",
     "electron": "^12.0.0",
     "electron-packager": "^15.1.0",
+    "github-release-notes": "^0.17.3",
     "mocha": "^8.1.3"
   },
   "dependencies": {
