@@ -1,10 +1,10 @@
 # Changelog
 
 ## 0.9.7 (03/04/2021)
-- [Changing github release notes to 0.13.1 🤔](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/08eb8f94a0d2836f459751adf033230183b74117) - @Ondrej Führer
-- [⏫ Bump electron-force dependencies](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/e80298bc40a87affb6d4d923fa82e5a9161ed50d) - @Ondrej Führer
-- [♻️ Refactor release script to separate steps](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/f459016c7f2742f3ddbbd841fe1c231fa91cd7ad) - @Ondrej Führer
-- [Bump version to 0.9.7-dev](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/d13ea34e262af15c1182ef23d19b018860bf0e82) - @Ondrej Führer
+- [Changing github release notes to 0.13.1 🤔](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/08eb8f94a0d2836f459751adf033230183b74117) - @ondrejfuhrer
+- [⏫ Bump electron-force dependencies](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/e80298bc40a87affb6d4d923fa82e5a9161ed50d) - @ondrejfuhrer
+- [♻️ Refactor release script to separate steps](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/f459016c7f2742f3ddbbd841fe1c231fa91cd7ad) - @ondrejfuhrer
+- [Bump version to 0.9.7-dev](https://api.github.com/repos/ondrejfuhrer/spendee-electron/git/commits/d13ea34e262af15c1182ef23d19b018860bf0e82) - @ondrejfuhrer
 
 ---
 
