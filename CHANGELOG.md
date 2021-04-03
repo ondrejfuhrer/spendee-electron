@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.9.6 (03/04/2021)
+- [[Release] Bump version to 0.9.6-dev](https://github.com/ondrejfuhrer/spendee-electron/commit/190857800c0d8643dce35607adab40b7c31d6468) - @ondrejfuhrer
+- [Adding release script](https://github.com/ondrejfuhrer/spendee-electron/commit/17537186bca2770fb480311ff5327ddcba1666eb) - @ondrejfuhrer
+- [Adding github-release-notes](https://github.com/ondrejfuhrer/spendee-electron/commit/f2cb4c5dc3552a45fb713cef42ceabbd5153274c) - @ondrejfuhrer
+- [Fixing changelog](https://github.com/ondrejfuhrer/spendee-electron/commit/1b52f956b1a8d350c43d316e02e7fac3906af653) - @ondrejfuhrer
+- [Update changelog for 0.9.5](https://github.com/ondrejfuhrer/spendee-electron/commit/638278e7b241c6d1b6083c7cc7ced6ba499876b8) - @ondrejfuhrer
+- [👨‍💻 Bump version to 0.9.6-dev](https://github.com/ondrejfuhrer/spendee-electron/commit/5f484a90ee7829894c7e0124921fb42bb3d55a74) - @ondrejfuhrer
+
+---
+
 ## 0.9.5 (03/04/2021)
 - [update package.lock-json](https://github.com/ondrejfuhrer/spendee-electron/commit/3ec32076fcf1a3a7859451cfc820054bc29c5f43) - @ondrejfuhrer
 - [Bump ini from 1.3.5 to 1.3.8 (#5)](https://github.com/ondrejfuhrer/spendee-electron/commit/adbd52186984f75063c10d0c3fda6fc0f5326148) - @dependabot[bot]

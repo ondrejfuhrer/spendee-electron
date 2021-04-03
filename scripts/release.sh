@@ -24,7 +24,7 @@ npm run make
 gh release create "${release_version}" -d -t "${release_version}" "./out/make/Spendee-${release_version}.dmg" "./out/make/zip/darwin/x64/Spendee-darwin-x64-${release_version}.zip"
 
 ## Update release notes
-npm run release-notes
+npm run release-notes -- --override
 
 ## Update Changelog
 npm run changelog
@@ -35,13 +35,13 @@ rm -f package.json.old
 # mv package.json.old package.json
 
 ## Setup -dev version as next in line
-./steps/increase_version.sh "${release_version}"
+./scripts/steps/increase_version.sh "${release_version}"
 
 ## Get the current version of the app
 version=$(npm run --silent version)
 
 ## Increase
-git add package.json package-lock.json
+git add package.json package-lock.json CHANGELOG.md
 git commit -m "Bump version to ${version}"
 
 ## Add back shashed changers
