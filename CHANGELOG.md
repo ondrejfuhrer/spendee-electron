@@ -23,11 +23,11 @@
 ---
 
 ## 0.9.4 (07/07/2020)
-Updated dependencies, bumping electron to major version 9.
+- Updated dependencies, bumping electron to major version 9.
 ---
 
 ## 0.9.3 (25/04/2020)
-Adding option to switch to beta version
+- Adding option to switch to beta version
 ---
 
 ## 0.9.2 (20/03/2020)
@@ -41,4 +41,4 @@ Adding option to switch to beta version
 ---
 
 ## First release of the app (18/10/2019)
-This is the initial release with a simple wrapper. It needs much more love in the future but for simple use it is enough.
+- This is the initial release with a simple wrapper. It needs much more love in the future but for simple use it is enough.
